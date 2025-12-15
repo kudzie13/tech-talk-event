@@ -1,0 +1,327 @@
+/* =============================
+   GLOBAL SETTINGS
+============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #eef2f7;
+  color: #1a1a1a;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.dark {
+  background: #0f0f12;
+  color: #e5e7eb;
+}
+
+.container {
+  max-width: 1240px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* =============================
+   TOP CONTROLS
+============================= */
+.top-controls {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.toggle {
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+body.dark .toggle {
+  background: rgba(40, 40, 40, 0.6);
+  color: #fff;
+}
+
+.toggle:hover {
+  transform: scale(1.05);
+}
+
+/* =============================
+   HERO SECTION
+============================= */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 30px;
+  margin-top: 90px;
+}
+
+.hero-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  padding: 32px;
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.28);
+}
+
+body.dark .hero-card {
+  background: rgba(20,20,20,0.55);
+  border-color: rgba(255,255,255,0.08);
+}
+
+.event-badge {
+  display: inline-block;
+  padding: 8px 18px;
+  background: linear-gradient(135deg,#38E4FF,#1F3C88);
+  color: #fff;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  margin-bottom: 14px;
+}
+
+h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: white;
+  text-shadow: 0 4px 14px rgba(0,0,0,0.4);
+}
+body.dark h1 { color: #E5F9FF; }
+
+.lead {
+  font-size: 1.15rem;
+  margin-bottom: 20px;
+  line-height: 1.65;
+  color: #E0F7FF;
+}
+body.dark .lead { color: #CDEEFF; }
+
+.meta .item {
+  margin-bottom: 10px;
+  color: #C4E9FF;
+}
+body.dark .meta .item { color: #9FD8FF; }
+
+.muted {
+  opacity: 0.8;
+  font-size: 0.9rem;
+  color: #B4D9FF;
+}
+body.dark .muted { color: #89CFFF; }
+
+/* =============================
+   ASIDE (RSVP + QUICK LINKS)
+============================= */
+.aside {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.cta-card {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(14px);
+  padding: 22px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+body.dark .cta-card {
+  background: rgba(20,20,20,0.55);
+  border-color: rgba(255,255,255,0.08);
+}
+
+.cta-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #E4F7FF;
+}
+
+/* COUNTDOWN */
+.countdown {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.unit {
+  text-align: center;
+}
+
+.num {
+  background: #111827;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  min-width: 50px;
+  display: inline-block;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+body.dark .num {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+/* RSVP FORM */
+.rsvp-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(240,240,240,0.85);
+  font-size: 0.9rem;
+}
+
+body.dark .rsvp-form input {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+}
+
+.rsvp-form button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg,#1F3C88,#2979ff);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.rsvp-form button:hover {
+  transform: translateY(-2px);
+  background: #1b4bcc;
+}
+
+/* QUICK LINKS */
+.quick-links {
+  padding: 22px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+}
+
+.abs-link {
+  display: block;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg,#1F3C88,#2979FF);
+  color: white;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.abs-link:hover {
+  transform: translateX(6px);
+  box-shadow: 0 6px 20px rgba(41,121,255,0.4);
+}
+
+/* =============================
+   MAIN CONTENT GRID
+============================= */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.card {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(16px);
+  padding: 22px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+}
+body.dark .card {
+  background: rgba(20,20,20,0.55);
+}
+
+.section-title h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+/* =============================
+   SPEAKER CARDS — FUTURISTIC DUBAI
+============================= */
+.speakers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+
+.speaker-card {
+  background: linear-gradient(135deg, rgba(31,60,136,0.2), rgba(56,228,255,0.14));
+  border: 1px solid rgba(56,228,255,0.15);
+  border-radius: 18px;
+  padding: 18px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+/* Avatar size normalization */
+.speaker-card img {
+  width: 70px;
+  height: 70px;
+  border-radius: 14px;
+  object-fit: cover;
+  border: 2px solid #38E4FF;
+  box-shadow: 0 4px 14px rgba(56,228,255,0.25);
+}
+
+body.dark .speaker-card img {
+  width: 65px;
+  height: 65px;
+}
+
+/* Continue speaker-card block */
+.speaker-card
+  .info {
+    flex: 1;
+  }
+
+.grid {
+  grid-template-columns: 1fr 380px;
+}
+
+
+.card {
+  overflow: hidden; /* prevent card content from overflowing */
+}
+
+.speaker-card {
+  width: 100%;
+  max-width: 300px;   /* keeps them narrow enough */
+}
+
+
+@media (max-width: 1024px) {
+  .speakers {
+    grid-template-columns: 1fr; /* stack vertically */
+  }
+
+  .grid {
+    grid-template-columns: 1fr; /* single column layout */
+  }
+}
